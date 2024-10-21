@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using PostgresEnumError.Data;
@@ -12,9 +13,11 @@ using PostgresEnumError.Models;
 namespace PostgresEnumError.Migrations
 {
     [DbContext(typeof(FooDbContext))]
-    partial class FooDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241021123709_AddEnum")]
+    partial class AddEnum
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
