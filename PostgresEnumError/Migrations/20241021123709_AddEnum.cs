@@ -11,6 +11,9 @@ namespace PostgresEnumError.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            // This migration will only work when adding this hack:
+            // migrationBuilder.Sql("DROP TYPE IF EXISTS marriage_status;");
+            
             migrationBuilder.AlterDatabase()
                 .Annotation("Npgsql:Enum:marriage_status", "divorced,married,single");
 
